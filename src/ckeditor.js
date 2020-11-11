@@ -48,11 +48,13 @@ import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor";
 import FontBackgroundColor from "@ckeditor/ckeditor5-font/src/fontBackgroundColor";
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment";
 import Highlight from "@ckeditor/ckeditor5-highlight/src/highlight";
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 
 class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
+  RemoveFormat,
   Essentials,
   UploadAdapter,
   Autoformat,
@@ -113,6 +115,7 @@ ClassicEditor.defaultConfig = {
       "italic",
       "underline",
       "strikethrough",
+      "removeFormat",
       "subscript",
       "superscript",
       "link",
