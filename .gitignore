@@ -1,0 +1,5 @@
+/dist
+/block
+/node_modules
+package-lock.json
+*.tgz
