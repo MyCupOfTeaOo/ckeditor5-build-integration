@@ -6,7 +6,7 @@
     "dev": "webpack --watch",
     "build": "webpack --mode production",
     "preversion": "npm run build && node ./copy.js",
-    "publish:all": "npm run build && release-it --ci"
+    "publish:all": "npm run preversion && release-it --ci"
   },
   "keywords": [
     "ckeditor5-build",
