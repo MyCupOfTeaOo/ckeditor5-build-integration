@@ -3,6 +3,7 @@
   "version": "23.1.1",
   "description": "The classic editor build of CKEditor 5 – the best browser-based rich text editor.",
   "scripts": {
+    "dev": "webpack --watch",
     "build": "webpack --mode production",
     "preversion": "npm run build && node ./copy.js",
     "publish:all": "npm run build && release-it --ci"

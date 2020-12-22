@@ -48,12 +48,14 @@ import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor";
 import FontBackgroundColor from "@ckeditor/ckeditor5-font/src/fontBackgroundColor";
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment";
 import Highlight from "@ckeditor/ckeditor5-highlight/src/highlight";
-import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+import RemoveFormat from "@ckeditor/ckeditor5-remove-format/src/removeformat";
+import Preview from "./plugin/Preview";
 
 class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
+  Preview,
   RemoveFormat,
   Essentials,
   UploadAdapter,
@@ -104,6 +106,7 @@ ClassicEditor.defaultConfig = {
   toolbar: {
     items: [
       "heading",
+      "Preview",
       "|",
       "fontFamily",
       "fontSize",
