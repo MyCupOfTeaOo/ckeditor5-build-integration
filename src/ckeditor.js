@@ -49,6 +49,7 @@ import FontBackgroundColor from "@ckeditor/ckeditor5-font/src/fontBackgroundColo
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment";
 import Highlight from "@ckeditor/ckeditor5-highlight/src/highlight";
 import RemoveFormat from "@ckeditor/ckeditor5-remove-format/src/removeformat";
+import LinkImage from "@ckeditor/ckeditor5-link/src/linkimage";
 import Preview from "./plugin/Preview";
 
 class ClassicEditor extends ClassicEditorBase {}
@@ -81,6 +82,7 @@ ClassicEditor.builtinPlugins = [
   ImageToolbar,
   ImageUpload,
   ImageResize,
+  LinkImage,
   Indent,
   Link,
   List,
@@ -169,6 +171,8 @@ ClassicEditor.defaultConfig = {
       "imageResize:50",
       "imageResize:75",
       "imageResize:original",
+      "|",
+      "linkImage",
       "|",
       "imageTextAlternative",
     ],
