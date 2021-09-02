@@ -7,7 +7,8 @@
 import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 
 import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
-import UploadAdapter from "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter";
+import CloudServices from "@ckeditor/ckeditor5-cloud-services/src/cloudservices";
+import CKFinderUploadAdapter from "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter";
 import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat";
 import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold";
 import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic";
@@ -34,7 +35,6 @@ import ListStyle from "@ckeditor/ckeditor5-list/src/listStyle";
 import TodoList from "@ckeditor/ckeditor5-list/src/todolist";
 import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed";
 import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph";
-import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice";
 import Table from "@ckeditor/ckeditor5-table/src/table";
 import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar";
 import TableProperties from "@ckeditor/ckeditor5-table/src/tableproperties";
@@ -51,15 +51,20 @@ import Highlight from "@ckeditor/ckeditor5-highlight/src/highlight";
 import RemoveFormat from "@ckeditor/ckeditor5-remove-format/src/removeformat";
 import LinkImage from "@ckeditor/ckeditor5-link/src/linkimage";
 import Preview from "./plugin/Preview";
+import Format from "./plugin/Format";
+
 
 class ClassicEditor extends ClassicEditorBase {}
 
+
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
+  Format,
   Preview,
   RemoveFormat,
   Essentials,
-  UploadAdapter,
+  CloudServices,
+  CKFinderUploadAdapter,
   Autoformat,
   FontFamily,
   FontSize,
@@ -90,7 +95,6 @@ ClassicEditor.builtinPlugins = [
   TodoList,
   MediaEmbed,
   Paragraph,
-  PasteFromOffice,
   Table,
   TableToolbar,
   TableProperties,
@@ -110,7 +114,6 @@ ClassicEditor.defaultConfig = {
       "heading",
       "Preview",
       "|",
-      "fontFamily",
       "fontSize",
       "fontColor",
       "fontBackgroundColor",
@@ -124,6 +127,7 @@ ClassicEditor.defaultConfig = {
       "subscript",
       "superscript",
       "link",
+      'unlink',
       "bulletedList",
       "numberedList",
       "todoList",
